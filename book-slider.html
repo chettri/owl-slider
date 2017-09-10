@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="./assests/css/owl.carousel.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assests/css/style.css"/>
+    <script src="./assests/js/jquery.min.js"></script>
+    <script src="./assests/js/owl.carousel.min.js"></script>
+</head>
+<body>
+<div class="book-list">
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $.getJSON('data.json', function (data) {
+            //do stuff with your data here
+            var sliderData = data.sections;
+            var sections = [];
+            sliderData.map((function (slider, index) {
+                var sliderSectionHeader =
+                    '<div class="heading">' +
+                    '<a class="" href=' + slider.url + '>' + slider.title + '</a>' +
+                    '</div>';
+                var cardItems = [];
+                slider.bookList.map(function (book, key) {
+                    var sliderCards = '<div class="card">' +
+                        '<div class="card-content">' +
+                        '<a href="" class="card-click-target"></a>' +
+                        '<div class="cover">' +
+                        '<div class="cover-image-container">' +
+                        '<div class="cover-outer-align">' +
+                        '<div class="cover-inner-align">' +
+                        '<img alt="' + book.title + '" class="cover-image"' +
+                        'src="' + book.imageUrl + '"' +
+                        'aria-hidden="true">' +
+                        '</div><span class="preview-overlay-container"></span>' +
+                        '</div> </div> </div>' +
+                        '<div class="details">' +
+                        '<a class="card-click-target" href=""></a>' +
+                        '<a class="title" href="" title="' + book.title + '" aria-hidden="true" tabindex="-1">' +
+                        '<span class="full-title">' + book.title + '</span>' +
+                        '<span class="paragraph-end"></span> </a>' +
+                        '<div class="subtitle-container">' +
+                        '<a class="subtitle author has-pub-date non-comic-series"' +
+                        'href="' + book.author.url + '" title="' + book.author.name + '">' +
+                        book.author.name + '</a>' +
+                        '</div>' +
+                        '<div class="stars-container">' +
+                        '<a class="subtitle author has-pub-date non-comic-series"' +
+                        'href="/store/books/author?id=Michelle+Lynn" title="Michelle Lynn">* * * * *</a>' +
+                        '<div class="price-container">' +
+                        '<span class="price">' +
+                        '<span class="full-price">' + book.readCount + '</span>' +
+                        '<span class="display-price">' + book.readCount + '</span>' +
+                        '</span> </div> </div></div>' +
+                        '</div>' +
+                        '</div>';
+                    cardItems.push(sliderCards);
+                });
+                var section = '<div class="section">' + sliderSectionHeader +
+                    '<div class="owl-carousel owl-theme" id="owl-carousel' + index + '">' + cardItems.join('') + '</div></div>';
+                sections.push(section);
+            }));
+            $('.book-list').append(sections.join(''));
+            sliderData.map((function (slider, index) {
+                $('#owl-carousel' + index).owlCarousel({
+                    rtl: false,
+                    loop: true,
+                    nav: true,
+                    margin: 10,
+                    autoplay: false,
+                    dots: false,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 6
+                        }
+                    }
+                });
+            }));
+        });
+    })
+</script>
+
+</html>

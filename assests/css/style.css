@@ -1,0 +1,245 @@
+body {
+    background-color: #eeeeee;
+    color: #333;
+    font-family: "Roboto", UILanguageFont, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+   // height: 100%;
+    //min-width: 1024px;
+    //position: relative;
+   // text-rendering: optimizeLegibility;
+   // z-index: -1;
+}
+
+.section{
+    padding: 30px 0;
+}
+
+.book-list {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    margin: 20px 60px;
+}
+
+#owl-demo .card {
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+}
+
+.card-content {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #fff;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.card-click-target {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.cover {
+}
+
+.cover-image:hover {
+    opcity: 0.5;
+}
+
+.card .cover-image-container {
+    position: relative;
+}
+
+.card .cover-outer-align {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.card .cover-inner-align {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.card .cover-image {
+    height:200px;
+}
+
+.card .details {
+    padding-top: 4px;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    padding: 7px 10px 0;
+    position: relative;
+    text-align: left;
+}
+
+.card .title .paragraph-end {
+    height: 19px;
+    width: 45px;
+}
+
+.paragraph-end {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#00ffffff', EndColorStr='#ffffff');
+    bottom: 0;
+    height: 25px;
+    max-height: 100%;
+    position: absolute;
+    right: 0;
+    width: 60px;
+}
+
+.card .subtitle-container, .card .stars-container {
+    display: block;
+    position: relative;
+    width: 100%;
+
+}
+
+.heading {
+    cursor: default;
+    font-size: 28px;
+    font-weight: 100;
+}
+
+.card-list {
+    height: 340px;
+}
+
+.card .title {
+    color: #212121;
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    max-height: 36px;
+    min-height: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.full-title, .card.books .subtitle.author {
+    display: inline-block;
+    float: left;
+}
+
+.stars-container .price-container {
+    display: inline-block;
+}
+
+.card .subtitle-container, .card .stars-container {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.card .stars-container {
+    margin-top: 20px;
+}
+
+.card .subtitle {
+    color: #616161;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 1px 0;
+    max-width: 132px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card .subtitle:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.price {
+    background: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17px;
+    padding-left: 2px;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+    color: #039be5;
+}
+
+.full-price {
+    text-decoration: line-through;
+    color: #aaa;
+    bottom: 15px;
+    margin: 0;
+    position: absolute;
+    right: 0;
+}
+
+.card .price-container {
+    bottom: 4px;
+    position: absolute;
+    right: 0;
+    text-align: left;
+}
+
+.preview-overlay-container:hover {
+    opacity: 1;
+}
+
+.preview-overlay-container {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 30%;
+    background: #fff;
+    padding: 15px;
+    opacity: 1;
+    text-transform: capitalize;
+}
+
+.owl-prev {
+    left: 0;
+}
+.owl-next {
+    right:0;
+}
+.owl-nav.disabled{
+    display:block !important;
+}
+b
